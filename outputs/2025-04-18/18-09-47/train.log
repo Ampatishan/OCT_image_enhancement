@@ -1,0 +1,15 @@
+[2025-04-18 18:09:47,670][configs.logger][INFO] - Using device: cpu
+[2025-04-18 18:09:47,671][configs.logger][INFO] - Initializing model: DummyModel
+[2025-04-18 18:09:47,672][configs.logger][INFO] - Preparing dataloaders...
+[2025-04-18 18:09:48,795][configs.logger][INFO] - Initializing trainer...
+[2025-04-18 18:09:48,795][configs.logger][INFO] - Starting training...
+[2025-04-18 18:09:48,795][configs.logger][INFO] - Epoch 1/5
+[2025-04-18 18:09:48,856][configs.logger][INFO] - Epoch 1 - Train Loss: 0.7180, Val Loss: 0.7205
+[2025-04-18 18:09:48,857][configs.logger][INFO] - Epoch 2/5
+[2025-04-18 18:09:48,870][configs.logger][INFO] - Epoch 2 - Train Loss: 0.7189, Val Loss: 0.7189
+[2025-04-18 18:09:48,871][configs.logger][INFO] - Epoch 3/5
+[2025-04-18 18:09:48,880][configs.logger][INFO] - Epoch 3 - Train Loss: 0.7272, Val Loss: 0.7175
+[2025-04-18 18:09:48,880][configs.logger][INFO] - Epoch 4/5
+[2025-04-18 18:09:48,889][configs.logger][INFO] - Epoch 4 - Train Loss: 0.6887, Val Loss: 0.7161
+[2025-04-18 18:09:48,889][configs.logger][INFO] - Epoch 5/5
+[2025-04-18 18:09:48,900][configs.logger][INFO] - Epoch 5 - Train Loss: 0.7017, Val Loss: 0.7156

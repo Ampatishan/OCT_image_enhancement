@@ -1,0 +1,3 @@
+[2025-04-18 18:07:20,419][configs.logger][INFO] - Using device: cpu
+[2025-04-18 18:07:20,420][configs.logger][INFO] - Initializing model: DummyModel
+[2025-04-18 18:07:20,422][configs.logger][INFO] - Preparing dataloaders...

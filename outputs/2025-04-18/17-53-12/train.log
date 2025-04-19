@@ -1,0 +1,2 @@
+[2025-04-18 17:53:12,369][configs.logger][INFO] - Using device: cuda
+[2025-04-18 17:53:12,369][configs.logger][INFO] - Initializing model: DummyModel

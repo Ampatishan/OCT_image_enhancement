@@ -1,0 +1,24 @@
+experiment:
+  name: dummy_run
+  seed: 42
+  save_dir: checkpoints/
+  log_dir: logs/
+model:
+  type: DummyModel
+  input_dim: 10
+  hidden_dim: 16
+  output_dim: 2
+dataset:
+  name: DummyDataset
+  size: 100
+  input_dim: 10
+  num_classes: 2
+  batch_size: 16
+  num_workers: 2
+  val_split: 0.2
+training:
+  epochs: 5
+  lr: 0.001
+  optimizer: Adam
+  weight_decay: 0.0
+  scheduler: null

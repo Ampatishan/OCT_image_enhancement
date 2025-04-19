@@ -1,0 +1,15 @@
+[2025-04-18 18:19:03,096][train_logger1][INFO] - Using device: cpu
+[2025-04-18 18:19:03,097][train_logger1][INFO] - Initializing model: DummyModel
+[2025-04-18 18:19:03,098][train_logger1][INFO] - Preparing dataloaders...
+[2025-04-18 18:19:03,950][train_logger1][INFO] - Initializing trainer...
+[2025-04-18 18:19:03,951][train_logger1][INFO] - Starting training...
+[2025-04-18 18:19:03,951][train_logger1][INFO] - Epoch 1/5
+[2025-04-18 18:19:03,962][train_logger1][INFO] - Epoch 1 - Train Loss: 0.6807, Val Loss: 0.6950
+[2025-04-18 18:19:03,963][train_logger1][INFO] - Epoch 2/5
+[2025-04-18 18:19:03,969][train_logger1][INFO] - Epoch 2 - Train Loss: 0.6845, Val Loss: 0.6946
+[2025-04-18 18:19:03,970][train_logger1][INFO] - Epoch 3/5
+[2025-04-18 18:19:03,976][train_logger1][INFO] - Epoch 3 - Train Loss: 0.6899, Val Loss: 0.6965
+[2025-04-18 18:19:03,977][train_logger1][INFO] - Epoch 4/5
+[2025-04-18 18:19:03,983][train_logger1][INFO] - Epoch 4 - Train Loss: 0.6768, Val Loss: 0.6979
+[2025-04-18 18:19:03,983][train_logger1][INFO] - Epoch 5/5
+[2025-04-18 18:19:03,989][train_logger1][INFO] - Epoch 5 - Train Loss: 0.6880, Val Loss: 0.6978
