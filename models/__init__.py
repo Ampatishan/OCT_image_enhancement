@@ -1,7 +1,7 @@
-from . import DummyModel
+from . import UNETR
 
 MODEL_REGISTRY = {
-    "DummyModel": DummyModel.DummyModel,
+    "UNETR": UNETR.UNETR,
     
 }# Add your model classes to this dictionary
 
@@ -19,4 +19,4 @@ def get_model(cfg):
     if cfg['name'] not in MODEL_REGISTRY:
         raise ValueError(f"Model {cfg.name} not found in registry.")
     
-    return MODEL_REGISTRY[cfg.name](**cfg.config.param)
+    return MODEL_REGISTRY[cfg.name](**cfg.param)
