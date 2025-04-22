@@ -147,6 +147,7 @@ class UNETR(nn.Module):
         z3 = self.decoder3(z3)
         z3 = self.decoder3_upsampler(torch.cat([z3, z6], dim=1))
 
+        z3 = F.interpolate(z3, size=(z0.size(2), z0.size(3)), mode='bilinear', align_corners=False)
         z0 = self.decoder0(z0)
         out = self.decoder0_header(torch.cat([z0, z3], dim=1))
 
