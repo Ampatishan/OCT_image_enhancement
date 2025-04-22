@@ -5,13 +5,13 @@ import torch
 from  configs.logger import setup_logger
 from models import get_model
 from datasets import get_dataloader
-from losses import get_loss_fn
+from losses import LossFactory
 from utils.optim_utils import get_optimizer, get_scheduler
 from trainer.base_trainer import Trainer
 import os
 
 
-@hydra.main(config_path="configs", config_name="dummy_config.yaml")
+@hydra.main(config_path="configs", config_name="unetr_config.yaml")
 def main(cfg: DictConfig):
     
     # Setup logger
@@ -33,8 +33,8 @@ def main(cfg: DictConfig):
     train_loader, val_loader = get_dataloader(cfg.dataset, cfg.training.batch_size)
 
     # Loss function
-    loss_fn = get_loss_fn(cfg.loss).to(device)
-
+    #loss_fn = LossFactory(cfg.loss)
+    loss_fn = torch.nn.L1Loss(reduction='mean').to(device)
     # Optimizer and scheduler
     optimizer = get_optimizer(cfg.optimizer, model.parameters())
     scheduler = get_scheduler(cfg.scheduler, optimizer)
