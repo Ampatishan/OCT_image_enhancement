@@ -1,8 +1,9 @@
 import torch
-from . import DummyDataset
+from torchvision import transforms as T
+from . import ImgDataset
 DATASET_REGISTRY = {
     
-    "DummyDataset": DummyDataset.DummyDataset,
+    "ImgDataset": ImgDataset.ImgDataset,
 }
 
 def get_dataloader(cfg, batch_size=32):
@@ -21,6 +22,7 @@ def get_dataloader(cfg, batch_size=32):
     dataset_cls = DATASET_REGISTRY[cfg.name]
     train_set = dataset_cls(cfg.train_path)
     val_set = dataset_cls(cfg.val_path)
+    
     
     train_loader = torch.utils.data.DataLoader(train_set, batch_size=batch_size, shuffle=True)
     val_loader = torch.utils.data.DataLoader(val_set, batch_size=batch_size, shuffle=False)
