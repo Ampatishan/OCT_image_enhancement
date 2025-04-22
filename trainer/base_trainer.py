@@ -20,10 +20,12 @@ class Trainer:
         self.log.info("Starting training...")
         for epoch in range(self.cfg.training.epochs):
             self.log.info(f"Epoch {epoch + 1}/{self.cfg.training.epochs}")
-            train_loss = self._train_one_epoch()
-            val_loss = self._validate()
-
-            self.log.info(f"Epoch {epoch + 1} - Train Loss: {train_loss:.4f}, Val Loss: {val_loss:.4f}")
+            if self.cfg.training.sanity_check:
+                self._sanity_check()
+            else:
+                train_loss = self._train_one_epoch()
+                val_loss = self._validate()
+                self.log.info(f"Epoch {epoch + 1} - Train Loss: {train_loss:.4f}, Val Loss: {val_loss:.4f}")
 
             if self.scheduler:
                 self.scheduler.step()
@@ -58,3 +60,22 @@ class Trainer:
                 running_loss += loss.item()
 
         return running_loss / len(self.val_loader)
+    
+    
+    def _sanity_check(self):
+        """Overfit the model on a single batch to validate setup."""
+        self.log.info("[Sanity] Sanity check started")
+        self.model.train()
+        inputs, targets = next(iter(self.train_loader))
+        inputs, targets = inputs.unsqueeze(0).to(self.device), targets.unsqueeze(0).to(self.device)
+
+        for step in range(self.cfg.training.epochs):
+            self.optimizer.zero_grad()
+            outputs = self.model(inputs)
+            loss = self.loss_fn(outputs, targets)
+            loss.backward()
+            self.optimizer.step()
+
+            self.log.info(f"[Sanity] Step | Loss: {loss.item():.4f} ")
+
+        self.log.info("[Sanity] Finished sanity check.")
