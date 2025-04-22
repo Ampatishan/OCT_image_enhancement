@@ -123,6 +123,7 @@ class UNETR(nn.Module):
 
 
     def forward(self, x):
+        x = x.transpose(0,1)
         B = x.shape[0]
         # H = W = x.shape[2]
         patch_tokens = self.patch_embed(x)
@@ -143,7 +144,6 @@ class UNETR(nn.Module):
 
         z6 = self.decoder6(z6)
         z6 = self.decoder6_upsampler(torch.cat([z6, z9], dim=1))
-
         z3 = self.decoder3(z3)
         z3 = self.decoder3_upsampler(torch.cat([z3, z6], dim=1))
 
