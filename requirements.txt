@@ -6,3 +6,4 @@ omegaconf>=2.3.0
 numpy>=1.22
 tqdm>=4.65
 pytest>=7.0
+torchmetrics
